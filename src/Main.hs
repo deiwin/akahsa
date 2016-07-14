@@ -2,19 +2,17 @@
 module Main where
 
 import           System.Environment (getEnv)
-import qualified Network.Wai as Wai (responseLBS, Application)
-import qualified Network.Wai.Handler.Warp as Warp (run)
-import           Network.HTTP.Types (status200)
+import qualified Web.Slack as S (runBot, SlackBot, Event(Message))
+import qualified Web.Slack.Message as M (sendMessage)
+import qualified Web.Slack.Config as C (SlackConfig(..))
 
-app :: Wai.Application
-app req respond =
-    respond $ Wai.responseLBS status200 [] "Hello World"
+sayHi :: S.SlackBot ()
+sayHi (S.Message cid _ _ _ _ _) = M.sendMessage cid "Hello, World!"
+sayHi _ = return ()
 
 main :: IO ()
 main = do
     token <- getEnv "AKAHSA_SLACK_TOKEN"
-    url <- getEnv "AKAHSA_SLACK_URL"
-    portString <- getEnv "AKAHSA_PORT"
-    let port = read portString :: Int
-    putStrLn ("token: \"" ++ token ++ "\", url: \"" ++ url ++ "\"")
-    Warp.run port app
+    let conf = C.SlackConfig { C._slackApiToken = token }
+    S.runBot conf sayHi ()
+
