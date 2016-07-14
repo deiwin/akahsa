@@ -15,6 +15,9 @@ cabal-version:       >=1.10
 
 executable akahsa
   main-is:             Main.hs
-  build-depends:       base >=4.9 && <4.10
+  build-depends:       wai,
+                       http-types,
+                       warp == 3.*,
+                       base >=4.9 && <4.10
   hs-source-dirs:      src
   default-language:    Haskell2010
