@@ -16,6 +16,8 @@ cabal-version:       >=1.10
 executable akahsa
   main-is:             Main.hs
   build-depends:       slack-api
+                     , regex-tdfa
+                     , text
                      , base
   hs-source-dirs:      src
   default-language:    Haskell2010
