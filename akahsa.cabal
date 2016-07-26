@@ -13,11 +13,31 @@ build-type:          Simple
 extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
-executable akahsa
-  main-is:             Main.hs
+library
   build-depends:       slack-api
                      , regex-tdfa
                      , text
                      , base
-  hs-source-dirs:      src
+  hs-source-dirs:      src/lib
+  exposed-modules:     Akahsa.Commands
+                     , Akahsa.Main
   default-language:    Haskell2010
+
+executable akahsa
+  main-is:             Main.hs
+  build-depends:       akahsa, base
+  hs-source-dirs:      src/exec
+  default-language:    Haskell2010
+
+test-suite akahsa-test
+  main-is:             test.hs
+  build-depends:       tasty
+                     , tasty-hspec
+                     , text
+                     , akahsa
+                     , base
+  hs-source-dirs:      tests
+                     , src
+  default-language:    Haskell2010
+  type:                exitcode-stdio-1.0
+
