@@ -1,7 +1,7 @@
 module Main where
 
-import qualified Akahsa.Main as Akahsa (runBot)
+import qualified Akahsa.Main as Akahsa (runPainBot)
 
 main :: IO ()
-main = Akahsa.runBot
+main = Akahsa.runPainBot
 
