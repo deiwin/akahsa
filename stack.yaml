@@ -6,8 +6,8 @@ extra-lib-dirs:
 packages:
 - '.'
 - location:
-    git: https://github.com/deiwin/slack-api.git
-    commit: e98dffe789d2ba415f4f9ed2510f14492cee16f8
+    git: https://github.com/mpickering/slack-api.git
+    commit: 305b6cfa29cb2ad1ed77b7c130f99c06bd8ab6b3
   extra-dep: true
 extra-deps: []
 resolver: lts-6.7
