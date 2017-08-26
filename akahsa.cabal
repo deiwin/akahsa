@@ -19,13 +19,16 @@ library
                      , text
                      , base
                      , persistent
+                     , persistent-template
                      , persistent-postgresql
                      , resource-pool
                      , monad-logger
                      , transformers
+                     , mtl
   hs-source-dirs:      src/lib
   exposed-modules:     Akahsa.Commands
                      , Akahsa.Main
+  other-modules:       Akahsa.Model
   default-language:    Haskell2010
 
 executable akahsa

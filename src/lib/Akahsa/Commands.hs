@@ -14,6 +14,7 @@ import qualified Web.Slack as S (SlackBot, Event(Message))
 import qualified Web.Slack.Message as M (sendMessage)
 import Database.Persist.Sql (SqlBackend)
 import Data.Pool (Pool)
+import Akahsa.Model ()
 
 type Regex = String
 
