@@ -18,6 +18,11 @@ library
                      , regex-tdfa
                      , text
                      , base
+                     , persistent
+                     , persistent-postgresql
+                     , resource-pool
+                     , monad-logger
+                     , transformers
   hs-source-dirs:      src/lib
   exposed-modules:     Akahsa.Commands
                      , Akahsa.Main

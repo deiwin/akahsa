@@ -8,6 +8,7 @@ packages:
 - location:
     git: https://github.com/deiwin/slack-api.git
     commit: e98dffe789d2ba415f4f9ed2510f14492cee16f8
+  extra-dep: true
 extra-deps: []
 resolver: lts-6.7
 ghc-options:
