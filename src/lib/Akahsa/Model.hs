@@ -6,7 +6,7 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 
 module Akahsa.Model (
-    Pain,
+    Pain(Pain, painDescription),
     PainId,
     migrateAll
 ) where
